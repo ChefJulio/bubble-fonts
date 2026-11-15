@@ -1,0 +1,15 @@
+## Interface: 16001
+## Title: BubbleFonts
+## Notes: One font for every addon that uses LibSharedMedia, and optionally the default UI.
+## Author: Hunter Graves
+## Version: @project-version@
+## SavedVariables: BubbleFontsDB
+## LoadSavedVariablesFirst: 1
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\LibSharedMedia-3.0\lib.xml
+
+FontObjects.lua
+Core.lua
+Options.lua

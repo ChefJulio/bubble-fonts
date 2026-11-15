@@ -1,0 +1,6 @@
+LibStub (Libs/LibStub/)
+
+The release ships no license file. LibStub is in the public domain, as declared in:
+  LibStub.lua:3   "LibStub is hereby placed in the Public Domain"
+  LibStub.toc:7   ## X-License: Public Domain
+  https://www.wowace.com/projects/libstub  "This work is dedicated to the public domain."
