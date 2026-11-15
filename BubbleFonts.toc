@@ -3,6 +3,9 @@
 ## Notes: One font for every addon that uses LibSharedMedia, and optionally the default UI.
 ## Author: Hunter Graves
 ## Version: @project-version@
+## Category: User Interface
+## IconTexture: Interface\AddOns\BubbleFonts\Media\Icon
+## X-Curse-Project-ID: 1809013
 ## SavedVariables: BubbleFontsDB
 ## LoadSavedVariablesFirst: 1
 
