@@ -14,11 +14,11 @@ Pick a font once and BubbleFonts applies it to every addon that uses LibSharedMe
 
 Type `/bubblefonts`, or open it from the minimap's addon menu. Pick a font, then press **Reload UI**.
 
-### Not covered
+### Good to know
 
-- Addons that don't use LibSharedMedia, such as DBM bars and VoidBox
-- Names and damage numbers floating in the game world, which come from the game client
-- Most bundled fonts are Latin-only; on Russian clients, Inter, Russo One and JetBrains Mono are offered
+- Addons that don't use LibSharedMedia, such as DBM bars and VoidBox, keep their own fonts
+- Names and damage numbers floating in the game world come from the game client and can't be changed
+- Most bundled fonts are Latin-only; Russian clients get Inter, Russo One and JetBrains Mono
 
 ### Feedback
 
