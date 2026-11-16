@@ -201,6 +201,19 @@ rely on it.
 
 ### 4.5 Settings and UI
 
+**Superseded in 0.2.0** (2026-11-16): the vertical-list panel below became a canvas page
+(`Settings.RegisterCanvasLayoutCategory`, used on Forever by TomTom, Auctionator and AceConfigDialog).
+It shows a table of every LSM font, built from `HashTable` paths and never `Fetch`, so the override
+doesn't flatten it. Each row is drawn in its own font, with columns for letter coverage (bundled fonts
+only, from `Fonts.lua`) and source addon (from the file path). Above the table are a large preview and
+the two checkboxes; below it is a footer with an in-page Reload UI button that is enabled while the
+saved settings differ from the ones loaded (`ns.loaded`). There is no popup. The ScrollBox pieces
+(`WowScrollBoxList`, `MinimalScrollBar`, `CreateScrollBoxListLinearView`,
+`ScrollUtil.InitScrollBoxListWithScrollBar`) were checked in `UI/Blizzard_SharedXML/Shared/Scroll/`.
+Bundled fonts: 14, listed in `Fonts.lua`, with sources in `Media/README.md`.
+
+Original 0.1.0 design:
+
 - SavedVariables `BubbleFontsDB`: `{ enabled = true, font = <LSM name>, path = <file path>, fontObjects = <bool> }`.
 - **DECISION 4** (how the font is picked). The proposal is a panel in Blizzard's settings window
   (Settings API, `docs/forever-notes.md` "Settings panel API"):

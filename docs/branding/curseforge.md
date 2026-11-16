@@ -13,9 +13,13 @@ the font you picked there.
   addon that lets you choose a font from a list.
 - **Blizzard UI fonts too** (on by default). Chat, tooltips, quest log, objective tracker and the
   default UI, keeping each one's size and outline.
-- **Inter SemiBold included.** A clean, modern font made for screens and readable at small sizes,
-  with Latin, Cyrillic and Greek letters. Or pick any font another addon has installed.
-- **Simple settings.** `/bubblefonts` or Esc > Options > AddOns > BubbleFonts.
+- **14 fonts included**, each with its own character: Inter SemiBold (the default), Atkinson
+  Hyperlegible (made for low vision), Barlow Semi Condensed, Fredoka, Comic Neue, Righteous,
+  MedievalSharp, Uncial Antiqua, Orbitron, Russo One, Black Ops One, JetBrains Mono, Pixelify Sans
+  and Special Elite. Or pick any font another addon has installed.
+- **A font table, not a guessing game.** `/bubblefonts` (or Esc > Options > AddOns > BubbleFonts)
+  shows every font drawn in its own face, with a large preview, which letters it covers and which
+  addon it comes from.
 - **Lightweight.** It applies once when you log in and does nothing while you play.
 
 ### Works with

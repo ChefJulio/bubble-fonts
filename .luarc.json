@@ -27,7 +27,10 @@
   "diagnostics.globals": [
     "BubbleFontsDB",
     "SLASH_BUBBLEFONTS1",
-    "SLASH_BUBBLEFONTS2"
+    "SLASH_BUBBLEFONTS2",
+    "BubbleFonts_OnAddonCompartmentClick",
+    "BubbleFonts_OnAddonCompartmentEnter",
+    "BubbleFonts_OnAddonCompartmentLeave"
   ],
   "diagnostics.disable": [],
   "diagnostics.severity": {

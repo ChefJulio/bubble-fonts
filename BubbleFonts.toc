@@ -5,6 +5,9 @@
 ## Version: @project-version@
 ## Category: User Interface
 ## IconTexture: Interface\AddOns\BubbleFonts\Media\Icon
+## AddonCompartmentFunc: BubbleFonts_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: BubbleFonts_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: BubbleFonts_OnAddonCompartmentLeave
 ## X-Curse-Project-ID: 1809013
 ## SavedVariables: BubbleFontsDB
 ## LoadSavedVariablesFirst: 1
@@ -13,6 +16,7 @@ Libs\LibStub\LibStub.lua
 Libs\CallbackHandler-1.0\CallbackHandler-1.0\CallbackHandler-1.0.xml
 Libs\LibSharedMedia-3.0\lib.xml
 
+Fonts.lua
 FontObjects.lua
 Core.lua
 Options.lua

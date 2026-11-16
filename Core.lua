@@ -6,18 +6,14 @@ local ADDON_NAME, ns = ...
 local LSM = LibStub("LibSharedMedia-3.0")
 
 ns.LSM = LSM
-ns.BUNDLED_NAME = "BubbleFonts: Inter SemiBold"
-ns.BUNDLED_PATH = "Interface\\AddOns\\" .. ADDON_NAME .. "\\Media\\Inter-SemiBold.ttf"
 
--- Inter has Latin, Greek and Cyrillic glyphs (no CJK); LSM rejects it on koKR/zhCN/zhTW clients.
-local BUNDLED_LANGMASK = LSM.LOCALE_BIT_western + LSM.LOCALE_BIT_ruRU
-
-local DEFAULTS = {
+ns.DEFAULTS = {
   enabled = true,
-  font = ns.BUNDLED_NAME,       -- LSM key of the chosen font
-  path = ns.BUNDLED_PATH,       -- its file, so we can register it before its own addon loads
+  font = ns.DEFAULT_FONT.key,   -- LSM key of the chosen font
+  path = ns.DEFAULT_FONT.path,  -- its file, so we can register it before its own addon loads
   fontObjects = true,           -- also restyle Blizzard's font objects (FontObjects.lua)
 }
+local DEFAULTS = ns.DEFAULTS
 
 local notices = {}   -- chat lines queued until PLAYER_LOGIN, when the chat frame shows them
 local applied = false
@@ -61,8 +57,16 @@ end
 
 local function Apply(db)
   applied = true
+  -- What this session runs with; the settings page compares against it to offer a reload.
+  ns.loaded = { enabled = db.enabled, font = db.font, fontObjects = db.fontObjects }
   if not db.enabled then
     return
+  end
+
+  -- A bundled font's file can move between versions; its key stays.
+  local bundled = ns.BUNDLED_BY_KEY[db.font]
+  if bundled then
+    db.path = bundled.path
   end
 
   local fonts = LSM:HashTable("font")
@@ -84,17 +88,23 @@ local function Apply(db)
 
   -- The font's file is gone (its addon was removed): fall back to the bundled font. That one is
   -- missing only where LSM refused it (koKR/zh clients); then there is nothing to apply.
-  if db.font ~= ns.BUNDLED_NAME then
-    Notify(("font \"%s\" is no longer installed; using %s."):format(db.font, ns.BUNDLED_NAME))
-    db.font, db.path = ns.BUNDLED_NAME, ns.BUNDLED_PATH
+  local default = ns.DEFAULT_FONT
+  if db.font ~= default.key then
+    Notify(("font \"%s\" is no longer installed; using %s."):format(db.font, default.name))
+    db.font, db.path = default.key, default.path
+    ns.loaded.font = db.font
   end
   if fonts[db.font] then
     Activate(db, db.font)
   end
 end
 
--- Registered at load so the font shows up in every addon's LSM font list.
-LSM:Register("font", ns.BUNDLED_NAME, ns.BUNDLED_PATH, BUNDLED_LANGMASK)
+-- Registered at load so they show up in every addon's LSM font list. The langmask tells LSM which
+-- clients the glyphs cover: it refuses these fonts on clients whose letters they lack.
+for _, font in ipairs(ns.BUNDLED) do
+  local langmask = LSM.LOCALE_BIT_western + (font.cyrillic and LSM.LOCALE_BIT_ruRU or 0)
+  LSM:Register("font", font.key, font.path, langmask)
+end
 
 -- Apply as early as possible: with LoadSavedVariablesFirst the saved choice is already here, before
 -- addons that load after us read any font. On a first install it is nil; ADDON_LOADED applies then.

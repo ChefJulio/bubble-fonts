@@ -20,10 +20,23 @@ addons that copy those fonts (TipTac, Leatrix Plus). Font sizes and outlines are
 `/bubblefonts` (or Esc > Options > AddOns > BubbleFonts):
 
 - **Enabled**: on or off.
-- **Font**: any font registered by any installed addon. The default is the bundled Inter SemiBold.
 - **Blizzard UI fonts**: also change the default UI's fonts.
+- **The font table**: every font BubbleFonts ships, then every font your other addons registered.
+  Each row is drawn in its own font, with the letters it covers (Latin, Cyrillic, Greek) and the
+  addon it comes from. Click a row to pick it; the preview above shows it larger.
 
-Changes apply after a UI reload; BubbleFonts offers one when you change a setting.
+Changes apply after a UI reload; the settings page shows when one is needed and has a Reload UI
+button.
+
+## Bundled fonts
+
+Inter SemiBold (the default), Atkinson Hyperlegible Bold, Barlow Semi Condensed SemiBold, Fredoka
+SemiBold, Comic Neue Bold, Righteous, MedievalSharp, Uncial Antiqua, Orbitron SemiBold, Russo One,
+Black Ops One, JetBrains Mono SemiBold, Pixelify Sans Medium and Special Elite. They show up as
+"BubbleFonts: ..." in every addon's font list.
+
+Most have only Latin letters. On Russian clients, BubbleFonts offers only those with full Cyrillic:
+Inter, Russo One and JetBrains Mono.
 
 ## Known limits
 
@@ -37,14 +50,15 @@ Changes apply after a UI reload; BubbleFonts offers one when you change a settin
 - While BubbleFonts is on, font dropdowns that preview each font through LibSharedMedia (TipTac,
   SexyMap, Dominos) show every entry in your font. In **TipTac's** options, picking a font while
   BubbleFonts is on saves the BubbleFonts font as your TipTac font.
-- Fonts other than the bundled Inter SemiBold may lack Cyrillic or Greek letters, so names in those
-  alphabets can show as boxes in addon text. Korean and Chinese text in Blizzard's UI keeps
+- Most fonts lack Cyrillic or Greek letters (the settings table shows which), so names in those
+  alphabets can show as boxes in addon text. Inter and JetBrains Mono have both. Korean and Chinese text in Blizzard's UI keeps
   Blizzard's fonts.
 - An addon that sets LibSharedMedia's global font itself would conflict with BubbleFonts.
 
 ## Credits and licenses
 
 - BubbleFonts: GPL v3 (`LICENSE`).
-- Inter: SIL Open Font License 1.1 (`Media/OFL.txt`), by the Inter Project Authors.
+- Fonts: SIL Open Font License 1.1, except Special Elite (Apache 2.0). Each font's license is in its
+  folder under `Media/Fonts/`; sources and authors are in `Media/README.md`.
 - LibStub (public domain), CallbackHandler-1.0 (BSD), LibSharedMedia-3.0 (LGPL v2.1). See
   `Libs/README.md`.

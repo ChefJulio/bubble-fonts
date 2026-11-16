@@ -18,7 +18,7 @@ OUT = sys.argv[1]
 SIZE = int(sys.argv[2]) if len(sys.argv) > 2 else 512
 S = 4  # supersampling
 W = 512 * S
-FONT = str(Path(__file__).resolve().parent.parent / "Media" / "Inter-SemiBold.ttf")
+FONT = str(Path(__file__).resolve().parent.parent / "Media" / "Fonts" / "Inter" / "Inter-SemiBold.ttf")
 GOLD_TOP, GOLD_BOTTOM = (255, 214, 110), (214, 148, 40)
 OUTLINE = (70, 44, 12, 255)
 
