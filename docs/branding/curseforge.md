@@ -1,50 +1,27 @@
 ## One font. Every addon.
 
-Tired of setting the same font in Plater, Details, SexyMap, Questie and every other addon one by one?
-**BubbleFonts** lets you pick a font once, and every addon that uses LibSharedMedia fonts switches to it.
-With one checkbox, the default UI switches too: chat, tooltips, quest text and nameplates.
-
-Your settings in other addons are **never changed**. Turn BubbleFonts off and every addon goes back to
-the font you picked there.
+Pick a font once and BubbleFonts applies it to every addon that uses LibSharedMedia fonts (Plater, Details!, SexyMap, Questie, MikScrollingBattleText, Prat, Dominos and more) and, if you like, to the default UI. Your settings in other addons are never touched, so turning BubbleFonts off restores everything.
 
 ### Features
 
-- **One font everywhere.** Uses LibSharedMedia's built-in "global font" setting, so it works with any
-  addon that lets you choose a font from a list.
-- **Blizzard UI fonts too** (on by default). Chat, tooltips, quest log, objective tracker and the
-  default UI, keeping each one's size and outline.
-- **14 fonts included**, each with its own character: Inter SemiBold (the default), Atkinson
-  Hyperlegible (made for low vision), Barlow Semi Condensed, Fredoka, Comic Neue, Righteous,
-  MedievalSharp, Uncial Antiqua, Orbitron, Russo One, Black Ops One, JetBrains Mono, Pixelify Sans
-  and Special Elite. Or pick any font another addon has installed.
-- **A font table, not a guessing game.** `/bubblefonts` (or Esc > Options > AddOns > BubbleFonts)
-  shows every font drawn in its own face, with a large preview, which letters it covers and which
-  addon it comes from.
-- **Lightweight.** It applies once when you log in and does nothing while you play.
+- **Works everywhere at once** through LibSharedMedia's built-in global font setting
+- **Blizzard UI fonts** (optional, on by default): chat, tooltips, quest text and nameplates, keeping their sizes and outlines
+- **14 bundled fonts**, from clean to characterful: Inter (default), Atkinson Hyperlegible, Barlow Semi Condensed, Fredoka, Comic Neue, Righteous, MedievalSharp, Uncial Antiqua, Orbitron, Russo One, Black Ops One, JetBrains Mono, Pixelify Sans and Special Elite
+- **A real font picker**: every font drawn in its own face, with a live preview, letter coverage and the addon it comes from
+- **Zero overhead**: applied once at login, nothing runs while you play
 
-### Works with
+### Usage
 
-Plater, Details!, SexyMap, Questie, MikScrollingBattleText, Dominos cast bars, Prat, and other
-addons that use LibSharedMedia fonts. With "Blizzard UI fonts" on, it also covers TipTac, Leatrix
-Plus and addons that reuse the default UI's fonts.
+Type `/bubblefonts`, or open it from the minimap's addon menu. Pick a font, then press **Reload UI**.
 
-### Good to know
+### Not covered
 
-- Changes apply after a UI reload. BubbleFonts offers one when you change a setting.
-- Some addons don't use LibSharedMedia and keep their own font: **DBM** bars,
-  **MinimalistCooldownEdge** and **VoidBox**. Set DBM and MinimalistCooldownEdge in their own
-  options; VoidBox has no font option.
-- Names floating above characters and damage numbers in the game world come from the game client
-  and can't be changed by addons.
-- While BubbleFonts is on, a few font dropdowns (TipTac, SexyMap, Dominos) show every entry in your
-  font. In TipTac's options, choosing a font while BubbleFonts is on saves the BubbleFonts font as
-  your TipTac font.
+- Addons that don't use LibSharedMedia, such as DBM bars and VoidBox
+- Names and damage numbers floating in the game world, which come from the game client
+- Most bundled fonts are Latin-only; on Russian clients, Inter, Russo One and JetBrains Mono are offered
 
 ### Feedback
 
-Bugs and ideas: [GitHub issues](https://github.com/ChefJulio/bubble-fonts/issues).
+Bugs and ideas: [GitHub issues](https://github.com/ChefJulio/bubble-fonts/issues)
 
----
-
-*Inter is by the Inter Project Authors, SIL Open Font License 1.1. Includes LibStub, CallbackHandler-1.0
-and LibSharedMedia-3.0.*
+<sub>Fonts are under the SIL Open Font License (Special Elite: Apache 2.0). Includes LibStub, CallbackHandler-1.0 and LibSharedMedia-3.0.</sub>
